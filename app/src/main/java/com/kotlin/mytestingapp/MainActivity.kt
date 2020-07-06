@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.StringBuilder
 
@@ -34,7 +35,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         names.add("Kurang Bagus")
 
         imagePriview = findViewById(R.id.img_preview)
-        img_preview.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.fronalpstock_big))
+//        img_preview.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.fronalpstock_big))
+        Glide.with(this).load(R.drawable.fronalpstock_big).into(imagePriview)
     }
 
     override fun onClick(view: View) {
@@ -43,7 +45,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             for (i in 0..2) {
                 name.append(names[i]).append("\n")
             }
-            tvText.text="19"
+            tvText.text=name.toString()
         }
     }
 }
